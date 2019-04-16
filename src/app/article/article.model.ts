@@ -1,11 +1,11 @@
 export class Article {
   title: string;
-  link: string;
+  body: string;
   votes: number;
 
-  constructor(title: string, link: string, votes?: number) {
+  constructor(title: string, body: string, votes?: number) {
     this.title = title;
-    this.link = link;
+    this.body = body;
     this.votes = votes || 0;
   }
 
@@ -21,7 +21,7 @@ export class Article {
   // the domain from a URL, which we'll explain shortly
   domain(): string {
     try {// e.g. http://foo.com/path/to/bar
-     const domainAndPath: string = this.link.split('//')[1]; // e.g. foo.com/path/to/bar
+     const domainAndPath: string = this.body.split('//')[1]; // e.g. foo.com/path/to/bar
      return domainAndPath.split('/')[0];
     } 
     catch (err) {

@@ -4,11 +4,14 @@
   <div class="card-body">
     <a href="{{ article.link }}"> {{ article.title }} </a>
      <!-- right here -->
-    <span class="badge badge-pill badge-info">{{article.domain()}}</span>
+    <span class="badge badge-pill badge-info">{{article.body}}</span>
   </div>
+
+
   <div class="card-footer">
      <div class="btn-group">
         <a href (click)="voteUp()" class="btn btn-secondary"> upvote </a>
         <a href (click)="voteDown()" class="btn btn-secondary"> downvote </a>
     </div>
   </div>
+
