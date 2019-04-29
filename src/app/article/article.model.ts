@@ -1,7 +1,7 @@
 export class Article {
   title: string;
   body: string;
-  votes: number;
+  votes: number; //Uso voti al posto di id
 
   constructor(title: string, body: string, votes?: number) {
     this.title = title;
@@ -23,10 +23,10 @@ export class Article {
     try {// e.g. http://foo.com/path/to/bar
      const domainAndPath: string = this.body.split('//')[1]; // e.g. foo.com/path/to/bar
      return domainAndPath.split('/')[0];
-    } 
+    }
     catch (err) {
       return null;
     }
   }
-    
+
 }
