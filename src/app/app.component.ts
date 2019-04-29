@@ -22,13 +22,19 @@ export class AppComponent {
     //Fai la get e ottieni la lista di articoli e riempi il vettore articles
     this.articles = new Array<Article>();
     this.oArt = this.http.get<Article[]>('https://jsonplaceholder.typicode.com/posts');
-    this.oArt.subscribe(data => {
-      data.forEach(element => {
-        this.articles.push(new Article(element.title, element.body));
-      });
-    })
+    this.oArt.subscribe(this.ricevidati);
   }
 
+  ricevidati = (data) => {
+   // this.articles = data; //Se non ci fossero metodi, basterebbe fare così
+    for(let element of data)
+    {
+       this.articles.push(new Article(element.title, element.body));
+    }
+  /*  data.forEach(element => {
+      this.articles.push(new Article(element.title, element.body));
+    });*/
+  }
 
   makeCompactRequest(title: HTMLInputElement, link: HTMLInputElement): boolean {
 
